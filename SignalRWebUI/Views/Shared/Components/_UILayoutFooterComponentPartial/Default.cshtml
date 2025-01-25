@@ -1,0 +1,67 @@
+﻿@model List<ResultContactDto>
+@foreach (var item in Model)
+{
+    
+<footer class="footer_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-col">
+                <div class="footer_contact">
+                    <h4>
+                        Contact Us
+                    </h4>
+                    <div class="contact_link_box">
+                        <a href="">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <span>
+                                Location
+                            </span>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <span>
+                                Call @item.Phone
+                            </span>
+                        </a>
+                        <a href="/Default/">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <span>
+                                @item.Mail
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 footer-col">
+                <div class="footer_detail">
+                    <a href="/Default/" class="footer-logo">
+                        @item.FooterTitle
+                    </a>
+                    <p>
+                        @item.FooterDescription
+                    </p>
+                        @await Component.InvokeAsync("_UILayoutSocialMediaComponentPartial")
+                </div>
+            </div>
+            <div class="col-md-4 footer-col">
+                <h4>
+                    Opening Hours
+                </h4>
+                <p>
+                    @item.OpenDays
+                </p>
+                <p>
+                    @item.OpenHours
+                </p>
+            </div>
+        </div>
+        <div class="footer-info">
+            <p>
+                &copy; <span id="displayYear"></span> All Rights Reserved By
+                <a href="https://html.design/">SignalR Restaurant</a><br><br>
+                &copy; <span id="displayYear"></span> Distributed By Caner Aktaş
+            </p>
+        </div>
+    </div>
+</footer>
+}
